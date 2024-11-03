@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="grid">
+            <div class="box box-one">
+                <div class="notes-app" id="app"> 
+                    <button class="note-btn" id="note-btn">+</button>
+                </div>
+            </div>
+            <div class="box box-two">
+                <div class="pomodoro-btn">
+                    <button>Pomodoro</button>
+                    <button>Short Break</button>
+                    <button>Long Break</button>
+                </div>
+                <div class="pomodoro-display">
+                    25:00
+                </div>
+                <button class="start-btn">Start</button>
+            </div>
+            <div class="box box-three">
+                <p>Quote of the day</p>
+                <p><span>❝</span>Do not lose hope, nor be sad.<span>❞</span></p>
+                <p>- Quran 3:139</p>
+            </div>
+            <div class="box box-four">
+                <form action="">
+                    <input id="task-input" type="text" placeholder="Write your task">
+                    <button id="new-task" type="submit">+</button>
+                </form>
+                <ul id="task-list"></ul>
+            </div>
+            <div class="box box-five">
+                <p>Playlist</p>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js" defer></script>
+</body>
+</html>

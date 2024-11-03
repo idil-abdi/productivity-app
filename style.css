@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin: 30px;
+}
+
+.grid{
+    display: grid; 
+    height: 100%; 
+    width: 100%; 
+    grid-template-columns: repeat(7, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    grid-template-areas: 
+        'notes notes notes notes pomodoro pomodoro pomodoro'
+        'quote quote todo todo todo playlist playlist';
+    gap: 16px; 
+    background-color: #f2f2f2; 
+    padding: 16px;
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.box{
+    font-family: 'M PLUS 2 Variable', sans-serif; 
+    border-radius: 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; 
+    justify-content: center;
+}
+/* NOTES */
+.box-one{
+    grid-area: notes;
+    background-color: rgba(255, 182, 193, 0.5); 
+    padding: 10px;
+}
+
+.notes-app {
+    display: flex;
+    /* grid-template-columns: repeat(auto-fill, 220px); */
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.note {
+    padding: 17px;
+    border-radius: 15px;
+    resize: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    height: 150px;
+    color: darkblue;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.close-note-btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    border: none;
+    background: none;
+    color: #af9c9f;
+    border-radius: 5px;
+}
+
+
+.note::placeholder {
+    color: gray;
+    opacity: 30%;
+}
+
+.note:hover,
+.note:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: all 300ms ease;
+}
+
+.note-btn{
+    height: 150px;
+    border-color: rgba(255, 255, 255, 0.37);
+    background: rgba(255, 255, 255, 0.27);
+    border-radius: 15px;
+    font-size: 70px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    width: 236px;
+}
+
+.note-btn:hover{
+    background: rgba(255, 255, 255, 0.55);
+    color: rgba(0, 0, 0, 0.6);
+    transition: all 300ms ease;
+}
+
+/* END OF NOTES */
+
+.box-two{
+    grid-area: pomodoro;
+    background-color: rgba(173, 255, 47, 0.5); 
+    padding: 10px ;
+}
+
+.pomodoro-btn{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pomodoro-btn button, .start-btn{
+    width: 200px;
+    background-color: #fff;
+    padding: 3px 1px;
+    border: 1px solid #d6ff97;
+    border-radius: 5px;
+}
+
+.pomodoro-display{
+    font-size: 5rem;
+}
+
+.box-three{
+    grid-area: quote;
+    background-color:rgba(255, 255, 224, 0.5); 
+}
+
+.box-four{
+    grid-area: todo;
+    background-color:  rgba(210, 180, 140, 0.5); 
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+input{
+    flex: 1;
+    padding: 16px;
+    background-color: transparent;
+    border-radius: 10px;
+    color: #000000;
+    outline: none;
+}
+
+form button{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color:transparent;
+    font-size: 30px;
+    outline: none;
+}
+
+#task-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    list-style: none;
+}
+
+.taskItem{
+    display: flex;
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task input{
+    width: 20px;
+    height: 20px;
+}
+
+.completed p {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.taskItem img{
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.box-five{
+    grid-area: playlist; 
+    background-color:  rgba(144, 238, 144, 0.5); 
+}
+
+@media only screen and (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "notes"
+            "pomodoro"
+            "quote"
+            "todo"
+            "playlist";
+    }
+}
