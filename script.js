@@ -67,6 +67,116 @@ noteBtnEl.addEventListener("click", addNote);
 
 // End of Notes
 
+// pomodoro
+const focusBtn = document.getElementById('focus')
+const buttons = document.querySelectorAll('.p-btn')
+const shortBtn = document.getElementById('shortbreak')
+const longBtn = document.getElementById('longbreak')
+const startBtn = document.getElementById('pomodoro-start-btn')
+const reset = document.getElementById('pomodoro-reset-btn')
+const pause = document.getElementById('pomodoro-pause-btn')
+const time = document.getElementById('time')
+
+let set;
+let active = 'focus'
+let count = 59;
+let paused = true
+let minCount = 59
+
+time.textContent = `1:00:00`
+const appendZero = (value) => {
+    value = value < 10 ? `0${value}` : value;
+    return value
+}
+
+reset.addEventListener('click', (
+    resetTime = () => {
+        pauseTimer();
+        switch (active) {
+            case 'long':
+                minCount = 29
+                break;
+            case 'short':
+                minCount = 14
+                break;
+            default:
+                minCount = 59
+                break;
+        }
+        count = 59;
+        time.textContent = minCount < 10 ? `0${minCount + 1}:00` : `${minCount + 1}:00`
+    }
+))
+
+const removeFocus = () => {
+    buttons.forEach((btn)=> {
+        btn.classList.remove('btn-focus')
+    });
+}
+
+focusBtn.addEventListener('click', () => {
+    removeFocus()
+    focusBtn.classList.add('btn-focus')
+    pauseTimer()
+    count = 59;
+    minCount = 59;
+    time.textContent = `1:00:00`
+})
+
+shortBtn.addEventListener('click', () => {
+    active = 'short'
+    removeFocus()
+    shortBtn.classList.add('btn-focus')
+    pauseTimer()
+    minCount = 14;
+    count = 59;
+    time.textContent = `${appendZero(minCount + 1)}:00`
+})
+
+longBtn.addEventListener('click', () => {
+    active = 'long'
+    removeFocus()
+    longBtn.classList.add('btn-focus')
+    pauseTimer()
+    minCount = 29;
+    count = 59;
+    time.textContent = `${minCount + 1}:00`
+})
+
+pause.addEventListener('click',
+    (pauseTimer = () => {
+        paused = true;
+        clearInterval(set)
+        startBtn.classList.remove('pomodoro-hide')
+        pause.classList.remove('pomodoro-show')
+        reset.classList.remove('pomodoro-show')
+    })
+)
+
+startBtn.addEventListener('click', () => {
+    reset.classList.add('pomodoro-show')
+    pause.classList.add('pomodoro-show')
+    startBtn.classList.add('pomodoro-hide')
+    startBtn.classList.remove('pomodoro-show')
+    if (paused) {
+        paused = false;
+        time.textContent = `${appendZero(minCount)} : ${appendZero(count)}`
+        set = setInterval(() => {
+            count--
+            time.textContent  = `${appendZero(minCount)} : ${appendZero(count)}`
+            if (minCount == 0) {
+                if(minCount != 0) {
+                    minCount--
+                    count = 60
+                } else {
+                    clearInterval(set)
+                }
+            }
+        }, 1000)
+    }    
+})
+// end of pomodoro
+
 // To Do List 
 
 let tasks = [];

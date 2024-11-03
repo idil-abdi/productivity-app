@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.container{
+body{
     display: flex; 
     align-items: center; 
     justify-content: center;
@@ -46,7 +46,6 @@
 
 .notes-app {
     display: flex;
-    /* grid-template-columns: repeat(auto-fill, 220px); */
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
@@ -55,7 +54,6 @@
 .note {
     padding: 17px;
     border-radius: 15px;
-    resize: none;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     font-size: 18px;
     height: 150px;
@@ -124,21 +122,61 @@
 
 .pomodoro-btn button, .start-btn{
     width: 200px;
-    background-color: #fff;
     padding: 3px 1px;
     border: 1px solid #d6ff97;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.pomodoro-hide-btn{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.btn-focus{
+    background-color: #ace553;
+    color: #fff;
+}
+
+.pause-btn,.reset-btn{
+    padding: 3px 1px;
+    border: 1px solid #d6ff97;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pause-btn{
+    width: 165px;
+    background-color: #fff;
+}
+
+.reset-btn{
+    padding: 1.5px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+
+.pomodoro-hide{
+    display: none;
+}
+.pomodoro-show{
+    display: block;
 }
 
 .pomodoro-display{
     font-size: 5rem;
-}
+} 
 
+/* Quotes */
 .box-three{
     grid-area: quote;
     background-color:rgba(255, 255, 224, 0.5); 
 }
+/* End of Quotes */
 
+/* To-do List */
 .box-four{
     grid-area: todo;
     background-color:  rgba(210, 180, 140, 0.5); 
@@ -211,7 +249,9 @@ form button{
     margin: 0 5px;
     cursor: pointer;
 }
+/* End of todo List */
 
+/* Playlist */
 .box-five{
     grid-area: playlist; 
     background-color:  rgba(144, 238, 144, 0.5); 

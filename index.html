@@ -16,14 +16,18 @@
             </div>
             <div class="box box-two">
                 <div class="pomodoro-btn">
-                    <button>Pomodoro</button>
-                    <button>Short Break</button>
-                    <button>Long Break</button>
+                    <button id="focus" class="p-btn btn-focus">Focus</button>
+                    <button id="shortbreak" class="p-btn">Short Break</button>
+                    <button id="longbreak" class="p-btn" >Long Break</button>
                 </div>
-                <div class="pomodoro-display">
-                    25:00
+                <div id="time" class="pomodoro-display"></div>
+                <button id="pomodoro-start-btn" class="start-btn pomodoro-show">Start</button> 
+                <div class="pomodoro-hide-btn">
+                    <button id="pomodoro-pause-btn" class="pause-btn pomodoro-hide">Pause</button> 
+                    <button id="pomodoro-reset-btn" class="reset-btn pomodoro-hide">
+                        <img src="./img/reload.png" alt="reload-icon" width="20px">
+                    </button>
                 </div>
-                <button class="start-btn">Start</button>
             </div>
             <div class="box box-three">
                 <p>Quote of the day</p>
