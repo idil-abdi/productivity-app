@@ -51,6 +51,10 @@ body{
     flex-wrap: wrap;
 }
 
+.sub-notes-app{
+    position: relative;
+}
+
 .note {
     padding: 17px;
     border-radius: 15px;
@@ -74,6 +78,7 @@ body{
     background: none;
     color: #af9c9f;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 
