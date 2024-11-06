@@ -196,7 +196,7 @@ form {
     gap: 10px;
 }
 
-input{
+.box-four input{
     flex: 1;
     padding: 16px;
     background-color: transparent;
@@ -260,6 +260,77 @@ form button{
 .box-five{
     grid-area: playlist; 
     background-color:  rgba(144, 238, 144, 0.5); 
+}
+
+.music-player{
+    text-align: center;
+    margin: 10px 0;
+}
+
+
+.song-img{
+    width: 180px;
+    border-radius: 10%;
+    border: 8px solid #fff;
+    box-shadow: 0 10px 60px rgba(225, 26, 26, 0.22);
+}
+
+.music-player h1{
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    margin-top: 20px;
+}
+
+.music-player p{
+    font-size: 14px;
+    color: #333;
+}
+
+#progress{
+    -webkit-appearance: none;
+    width: 85%;
+    height: 6px;
+    background: #7b9455;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+#progress::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background: #7b9455;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 5px 5px rgba(225, 26, 26, 0.22);
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls div{
+    width: 40px;
+    height: 40px;
+    margin: 13px;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #7b9455;
+    box-shadow: 0 10px 20px rgba(225, 26, 26, 0.22);
+    cursor: pointer;
+}
+
+.controls div:nth-child(2){
+    transform: scale(1.5);
+    background: #7b9455;
+    color: #fff;
 }
 
 @media only screen and (max-width: 700px) {

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productivity App</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <div class="container">
@@ -46,7 +48,21 @@
                 <ul id="task-list"></ul>
             </div>
             <div class="box box-five">
-                <p>Playlist</p>
+                <div class="music-player">
+                        <img src="./img/1174386645.jpg" class="song-img" alt="song-img">
+                        <h1>Surah Baqarah</h1>
+                        <p>abdul rahman al-sudais</p>
+                        <audio id="song">
+                            <source src="./audio/surah-baqarah.mp3" type="audio/mpeg">
+                        </audio>
+                        <span id="volume"></span>
+                        <input type="range" value="0" id="progress">
+                        <div class="controls">
+                            <div><i class="fa-solid fa-backward"></i></div>
+                            <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                            <div><i class="fa-solid fa-forward"></i></div>
+                        </div>
+                </div>
             </div>
         </div>
     </div>
